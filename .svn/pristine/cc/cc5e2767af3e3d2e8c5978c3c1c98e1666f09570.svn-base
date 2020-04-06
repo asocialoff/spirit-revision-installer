@@ -1,0 +1,57 @@
+<?php
+//error_reporting(E_ERROR | E_PARSE);
+//require("installer.php");
+
+/*
+* INFO: This all system needs a public target directory such as http://examplesite.com/mypublic-source
+* which contains all the source code that can be fetched & zipped to any server
+*/
+
+require("deploy.php");
+
+$public_source_code_url = PUBLIC_SOURCE_CODE_URL_TARGET;
+
+/* extract */
+$src = new ZipArchive(); // create a new instance of your source directory
+$zip = new ZipArchive();// create an instance of ZipArchive
+
+if(is_deployed())
+{
+    // TARGET SOURCE CODE LOCATION
+    //$src->open(ROOT_PATH . "/full-fetchable-source/spirit-revision-rev-70.zip");
+    // EXTRACTED SOURCE CODE LOCATION
+    //$src->extractTo(ROOT_PATH);
+    echo "Fetching source code from server...";
+    
+    // warning: if the zip isn't created then it may be a probleme with Addfile because ZipArchive cannot create empty zip
+    $zip->open(ROOT_PATH . "/full-fetchable-source/spirit-revision-rev-70.zip", ZipArchive::CREATE); // create a zip archive
+    $zip->addFile(ROOT_PATH . "/public_source_code",'*');
+
+//    file_put_contents("LOG_ERROR.txt",$a);
+//    $target_name = "./spirit-revision_archive.zip"; // set a target name
+//    $zip->addFromString("README.txt" . '' , "Compressed spirit-revision successfully.\n");
+    /* fetch source code from server 1 in order to populate it  */
+    //$zip->addFile(ROOT_PATH . "/public_source_code",'hello-world.txt');
+
+}else{
+    // TODO: Fix localhost installer
+    $src->open("core/spirit-revision-rev-70.zip"); // zip file to extract
+    $src->extractTo('src'); // extract directory
+    echo "Fetching source code from local server...";
+
+    // details to create a zip
+    $target_name = "./spirit-revision_archive.zip"; // set a target name
+    $zip->addFromString("README.txt" . '' , "Compressed spirit-revision successfully.\n");
+    $zip->addFile('core/hello-world.txt','hello-world.txt');
+}
+
+//$zip->open($target_name, ZipArchive::CREATE); // create a zip archive
+
+// add files to the archive
+
+// close to avoid leak
+$dbg = "status: " . $zip->getStatusString() . "\n" . 'fetch_source_code_debug_url: [' . $public_source_code_url . "]\n";
+file_put_contents("LOG.txt",$dbg);
+$src->close();
+$zip->close();
+?>

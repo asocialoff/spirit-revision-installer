@@ -1,0 +1,14 @@
+<?php
+define('ROOT_PATH', $_SERVER["DOCUMENT_ROOT"]);
+
+function is_deployed() : bool
+{
+    if($_SERVER['SERVER_NAME'] == 'localhost')
+    {
+        return false;
+    }else if($_SERVER['SERVER_NAME'] == 'hackotron.com')
+    {
+        return true;
+    }
+}
+?>

@@ -1,0 +1,15 @@
+<?php 
+/*
+* Auto-generated configuration file 
+*/
+
+$cfg_host="'"t";
+$cfg_name=""'t"'t";
+$cfg_username=""'t"'t";
+$cfg_password="'"t";
+
+ //DO NOT MODIFY
+$public_source_code_url="http://pablolabeque.com/public_source_code/source_build_70.zip";
+$spirit_installer_rev_build="28";
+$web_revision_build="96";
+?>

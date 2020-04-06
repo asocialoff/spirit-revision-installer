@@ -1,0 +1,13 @@
+<?php 
+/*
+* Auto-generated configuration file 
+*/
+
+$cfg_host="tgtg";
+$cfg_name="tg";
+$cfg_username="tg";
+$cfg_password="tg";
+
+ //DO NOT MODIFY
+$public_source_code_url="http://pablolabeque.com/public_source_code/source_build_70.zip";
+?>

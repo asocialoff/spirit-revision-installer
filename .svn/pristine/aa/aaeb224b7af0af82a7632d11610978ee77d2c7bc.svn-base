@@ -1,0 +1,59 @@
+.non_deployed{
+    background-color: #18171B;
+    margin-right: 1400px;
+    color: #FF8400;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.center_download
+{
+        padding-top: 50px;
+}
+
+.header_step
+{
+    padding-top: 50px;
+   color: black;
+   font-family: Tahoma;
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.step_details_header
+{
+    padding-top: 50px;
+   color: black;
+   font-family: Tahoma;
+   font-weight: bold;
+   font-size: 13px;
+}
+
+.notification_download
+{
+   color: black;
+   font-family: Tahoma;
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.border_download_settings
+{
+    margin-left: 500px;
+    height: 300px;
+    width: 500px;
+    background-color: rgba(214, 214, 214, 1);
+}
+
+.border_download
+{
+    margin-left: 500px;
+    height: 400px;
+    width: 500px;
+    background-color: rgba(214, 214, 214, 1);
+}
+
+.label_info{
+    margin-top: 10px;
+}

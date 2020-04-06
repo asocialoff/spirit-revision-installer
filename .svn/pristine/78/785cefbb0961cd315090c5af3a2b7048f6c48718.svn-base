@@ -1,0 +1,46 @@
+/INFO: do not remove anyfiles & especially not into the core folder/
+
+1) Run installer.php
+2) Follow the steps
+
+
+# TO DEVELOPERS WHO WANTS TO WORK ON THE PROJECT #
+
+                    # Project status #
+------------------
+Working api status: 0%
+Web client status: 45%
+Web Installer status: 95%
+------------------
+                # SOURCE CODE GUIDE LINE #
+
+# A few informations before getting into the code #
+
+- the project is currently (as of now) READ-ONLY but still is open-source tho.
+- *to work (push,commit) on the subversion repository, you'll need an invitation.
+- the whole project is hosted on riouxsvn ( subversion ) and will stay that way.
+
+If you ever want to contribute to the project, please send an email to example@gmail.com to request your verification,
+you'll have to send the email with your real email so i can you add you the riouxsvn group and set your permissions
+
+                # SOURCE CODE INSTALLATION #
+                    (Read Only - Public)
+
+If you want to pull the source code to your computer and work on it then lets follow a few steps:
+
+TortoiseSVN (command-line)
+
+#CHECKOUT#
+1) Setup in tortoise the url of the repository
+ > https://svn.riouxsvn.com/spiritinstaller
+ > https://svn.riouxsvn.com/spirit_revision
+
+2 ) Create a target directory on your computer
+3 ) svn checkout directory_name
+
+#UPDATE#
+
+1) svn update [optional -rev n°]
+
+                # SOURCE CODE INSTALLATION #
+                        (Verified)
