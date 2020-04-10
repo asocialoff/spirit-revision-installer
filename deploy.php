@@ -1,7 +1,7 @@
 <?php
 require("versioning/xml_parser.php");
 
-$DebugInstaller = 1; // 0 : test / debug distro | >= 1 : official release branch
+$DebugInstaller = 0; // 0 : official release branch | >= 1 : test / debug distro | (always on 0 unless you know what you doing )
 
 /*Defines global variables*/
 if( $DebugInstaller >= 1 ) {
