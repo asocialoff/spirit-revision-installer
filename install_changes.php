@@ -8,7 +8,8 @@
 */
 
 require("deploy.php");
-echo 'debug: ' . $_POST['test'];
+//echo 'debug: ' . $_POST['test'];
+echo "Successfully imported core<br>";
 
 $remote_file_url  = PUBLIC_SOURCE_CODE_URL_TARGET;
 

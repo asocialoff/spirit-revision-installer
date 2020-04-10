@@ -35,6 +35,17 @@ require("Xor/xor.php"); // include our cypher class
                 . "\n" . "\n //DO NOT MODIFY" . "\n" . '$public_source_code_url="' . $output . '";'
                 . "\n" . '$spirit_installer_rev_build="' . $spirit_installer_build . '";' . "\n" . '$web_revision_build="' . $web_rev_build . '";' . "\n?>";
 
+                $CorePath = file_get_contents('core/database.sql'); // read the dump content
+                $Connect = new mysqli( $_GET["db_host"] , $_GET["db_username"] , $_GET["db_password"]  , $_GET["db_name"] ); // fill the database info
+                mysqli_multi_query( $Connect , $CorePath ); // import our dump to your target database
+
+              /*   $UpdateWebRevision = "INSERT INTO webclient_version (rev) VALUES ($web_rev_build)";
+                   $UpdateInstallerRevision = "INSERT INTO installer_version (rev) VALUES ($spirit_installer_build)";
+
+                   mysqli_query($Connect,$UpdateWebRevision);
+                   mysqli_query($Connect,$UpdateInstallerRevision);
+              */
+
                 if(fwrite($file, $parse) !== TRUE){
                     echo "File written!";
                     header('Location: installer.php');
