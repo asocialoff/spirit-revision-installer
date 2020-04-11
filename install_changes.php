@@ -9,9 +9,9 @@
 
 require("deploy.php");
 //echo 'debug: ' . $_POST['test'];
-echo "Successfully imported core<br>";
 
 $remote_file_url  = PUBLIC_SOURCE_CODE_URL_TARGET;
+$rev_src = WEB_REV_BUILD;
 
 /* extract */
 $src = new ZipArchive(); // create a new instance of your source directory
@@ -92,7 +92,6 @@ if(is_deployed())
     //$src->extractTo(ROOT_PATH);
     echo "Fetching source code from server...";
 
-
     mkdir(ROOT_PATH . "/spirit-revision");
 
     $url = $remote_file_url; // url of source code respository
@@ -124,6 +123,27 @@ if(is_deployed())
 	/* Extract Zip File */
 	$zip->extractTo($extractPath);
 
+    $zip->open($zip_file);
+
+    ?>
+
+    <textarea disabled='' title='' rows='10' placeholder='Starting deployed routine
+    Init chosen repo: <?php echo $DebugInstaller . PHP_EOL; ?>
+    (Downloading from <?php echo $remote_file_url . PHP_EOL; ?> ....)
+    Uploading spirit-revision v<?php echo $rev_src . PHP_EOL; ?>
+    Importing sql dump....
+    DebugFinalPath: <?php echo $target_directory . PHP_EOL; ?>
+    ----------------------
+    -------FILE DUMP------
+    ----------------------
+    <?php for($i = 0; $i < $zip->numFiles; $i++)
+    {
+        echo $zip->getNameIndex($i) . PHP_EOL;
+    } ?>
+    ' cols='80' style='width:100%; margin: 0;'></textarea>
+
+    <?php
+
 
 //    file_put_contents("LOG_ERROR.txt",$a);
 //    $target_name = "./spirit-revision_archive.zip"; // set a target name
@@ -141,6 +161,13 @@ if(is_deployed())
     $target_name = "./spirit-revision_archive.zip"; // set a target name
     $zip->addFromString("README.txt" . '' , "Compressed spirit-revision successfully.\n");
     $zip->addFile('core/hello-world.txt','hello-world.txt');
+
+    echo "<textarea disabled='' title='' rows='10' placeholder='Init chosen repo: $DebugInstaller
+    (Downloading from $remote_file_url ....)
+    Uploading Spirit-revision $rev_src......
+    Importing sql dump to target database....
+    /!\ WARNING /!\ Localhost version detected            
+    ' cols='80' style='width:100%; margin: 0;'></textarea>";
 }
 
 //$zip->open($target_name, ZipArchive::CREATE); // create a zip archive

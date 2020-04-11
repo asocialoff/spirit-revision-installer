@@ -1,5 +1,6 @@
 <?php
 require("versioning/xml_parser.php");
+require("versioning/VersionHandler.php");
 
 $DebugInstaller = 0; // 0 : official release branch | >= 1 : test / debug distro | (always on 0 unless you know what you doing )
 
@@ -11,8 +12,8 @@ if( $DebugInstaller >= 1 ) {
 }
 define('ROOT_PATH', $_SERVER["DOCUMENT_ROOT"]);
 
-define('SPIRIT_INSTALLER_REV_BUILD', $display_spirit_installer->index['rev']);
-define('WEB_REV_BUILD', $display_website_rev->index['rev']);
+define('SPIRIT_INSTALLER_REV_BUILD', fixed_chunk($display_spirit_installer->index['rev']));
+define('WEB_REV_BUILD', fixed_chunk($display_website_rev->index['rev']));
 
 function is_deployed() : bool
 {
@@ -24,4 +25,11 @@ function is_deployed() : bool
         return true;
     }
 }
+
+function create_file( $string )
+{
+    // do some normalizing
+    return touch( $string );
+}
+
 ?>

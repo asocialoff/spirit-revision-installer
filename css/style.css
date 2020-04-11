@@ -1,17 +1,25 @@
-.non_deployed{
-    background-color: #18171B;
-    margin-right: 1400px;
-    color: #FF8400;
-    font-family: Tahoma;
-    font-weight: bold;
-    font-size: 15px;
+* {
+    box-sizing: border-box;
 }
+
+.wrapper {
+    max-width: 1024px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+    Temporary CSS Style Sheet
+*/
+
+
+/*STARTS OF INSTALLER CSS*/
 
 .revision_version_section
 {
     /*background-color: blue;*/
-    padding-top: 100px;
-    color: black;
+    color: #d4d4d4;
     font-family: Tahoma;
     font-weight: bold;
     font-size: 13px;
@@ -19,33 +27,32 @@
 
 .center_download
 {
-        padding-top: 50px;
 }
 
 .header_step
 {
-    padding-top: 50px;
-   color: black;
-   font-family: Tahoma;
-   font-weight: bold;
-   font-size: 15px;
+    color: #d4d4d4;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .step_details_header
 {
-    padding-top: 50px;
-   color: black;
-   font-family: Tahoma;
-   font-weight: bold;
-   font-size: 13px;
+    color: #d4d4d4;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .notification_download
 {
-   color: black;
-   font-family: Tahoma;
-   font-weight: bold;
-   font-size: 15px;
+    color: #d4d4d4;
+    background-color: #4b7056;
+    display: inline-block;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .border_download_settings
@@ -66,4 +73,425 @@
 
 .label_info{
     margin-top: 10px;
+}
+
+/*ENDING OF INSTALLER CSS*/
+
+div,h2,fieldset {
+    /*push all headers together*/
+    margin: 0;
+}
+
+button {
+    margin-top: 8px;
+    /*style*/
+    font-family: Tahoma;
+    background-color: #666666;
+    color: white;
+    border: 1px solid #333333;
+}
+
+/*
+* Primary Menu & wrapper
+*/
+.main-panel #content {
+    font-size: 15px;
+}
+
+.window-wrapper {
+    font-size: 0;
+}
+
+.window-wrapper .primary-menu {
+    display: inline-block;
+    vertical-align: top;
+    width: 86%;
+}
+
+.window-wrapper .primary-menu .main-panel {
+    background-color: #474747;
+}
+
+.primary-menu .header-primary-menu {
+    background-color: #666666;
+}
+
+.primary-menu .header-primary-menu .top-primary-menu-label {
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: Tahoma, sans-serif;
+    font-size: 20;
+    font-weight: bold;
+}
+
+.primary-menu {
+    font-size: 13px;
+}
+
+/*
+* Secondary Menu
+*/
+
+.secondary-menu {
+    font-size: 14px;
+    width: 13%;
+    margin-right: 1%;
+    display: inline-block;
+}
+
+.secondary-menu .quick-links a
+{
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 4px;
+}
+
+.secondary-menu .quick-links #selected
+{
+    font-weight: bold;
+}
+
+.secondary-menu .quick-links
+{
+    padding-bottom: 15px;
+    background-color: #474747;
+    display:grid;
+    padding-top: 13px;
+    padding-bottom: 15px;
+    color: white;
+    font-family: Tahoma, sans-serif;
+}
+
+.secondary-menu .header-secondary-menu-colapsed {
+    background-color: #666666;
+    margin-top: 5px;
+}
+
+.secondary-menu .header-secondary-menu-colapsed .top-secondary-menu-label {
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: Tahoma, sans-serif;
+    font-size: 20;
+    font-weight: bold;
+}
+
+
+.secondary-menu .header-secondary-menu {
+    background-color: #666666;
+}
+
+.secondary-menu .header-secondary-menu .top-secondary-menu-label {
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: Tahoma, sans-serif;
+    font-size: 20;
+    font-weight: bold;
+}
+
+.persistent-header-top #header-features{
+    margin-left: 20px;
+    margin-top: 13px;
+    font-family: Tahoma;
+    font-size: 17px;
+    font-weight: normal;
+    display:inline-block;
+}
+
+.persistent-header-top
+{
+    margin-top: 20px;
+    /*seperate each headers*/
+    margin-bottom: 12px;
+    height: 45px;
+    background-color: #474747;
+}
+
+.header_notification
+{
+    background-color: #7f39a5;
+    margin: 0;
+    padding: 0;
+}
+
+.header_notification p {
+    font-family: Tahoma;
+    vertical-align: middle;
+
+    font-size: 13px;
+    text-align: center;
+}
+
+.header_error_credentials
+{
+    background-color: #474747;
+}
+
+.header_error_credentials p {
+    font-family: Tahoma;
+    padding-top: 3px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer-scene
+{
+    background-image: linear-gradient(to top, black,#4b4676 );
+}
+
+.footer-scene p {
+    font-family: Tahoma;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.body-scene{
+    margin-left: 500px;
+    height: auto;
+    width: 500px;
+    background-color: #474747;
+}
+
+.body-scene fieldset{
+    margin-left: 80px;
+    margin-right: 80px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+}
+
+legend {
+    color: #ffffff;
+}
+
+.body-scene input[type=text],
+.body-scene input[type=password],
+.body-scene input[type=email],
+.body-scene input[type=number]
+{
+    color: white;
+}
+
+.body-scene input[type=submit] {
+    /*position*/
+    margin-top: 20px;
+    /*style*/
+    font-family: Tahoma;
+    text-align: center;
+    background-color: #666666;
+    color: white;
+    border: 1px solid #333333;
+    /* padding-left: 5px;*/
+}
+
+.body-scene #back-button
+{
+    /*position*/
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom: 5px;
+    /*style*/
+    font-family: Tahoma;
+    text-align: center;
+    background-color: #666666;
+    color: white;
+    border: 1px solid #333333;
+    padding-left: 5px;
+}
+
+#installer_bar {
+    width: 50%;
+    background-color: #ddd;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bar {
+    width: 1%;
+    height: 0;
+    background-color: #7f39a5;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+}
+
+.body-scene #remove-ticket {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.action-box {
+    padding-top: 18px;
+    color: white;
+    font-family: Tahoma, sans-serif;
+}
+
+.action-box p {
+    font-size: 13px;
+}
+
+.action-box #special-space
+{
+    margin-top: 10px;
+}
+
+.action-box #tickets-box
+{
+    padding-bottom: 5px;
+}
+
+.action-box  #tickets-box-center{
+    text-align: center;
+    font-size: 15px;
+}
+
+.action-box .register_info{
+    margin: 0;
+    padding-top: 3px;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.action-box .label_info{
+    margin: 0;
+}
+
+.action-box a {
+    color: white;
+}
+
+#scrollable {
+    overflow-y: scroll;
+}
+
+.picto
+{
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+.action-box fieldset .special_link_spaced {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #66a3ff;
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.action-box fieldset .special_link {
+    text-decoration: none;
+    text-decoration: underline;
+    color: #66a3ff;
+    font-weight: normal;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.action-box fieldset input, textarea
+{
+    background-color: #666666;
+    border-style: none;
+    resize: none;
+}
+
+/*Apply our options / select design*/
+
+.action-box .select_box {
+    margin-bottom: 5px;
+}
+
+.action-box select {
+    background-color: #666666;
+    color: white;
+    border-style: none;
+}
+
+.action-box select option {
+    background-color: #666666;
+    color: white;
+    border-style: none;
+}
+
+.action-box select option:disabled {
+    color: #CCC;
+}
+
+/*Universal engine css change*/
+.action-box textarea::-webkit-input-placeholder {
+    font-family: Tahoma;
+    color: white;
+    text-align: left;
+}
+
+.action-box fieldset input::placeholder , textarea {
+    font-family: Tahoma;
+    color: white;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.page-header-top
+{
+    background-color: #666666;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.page-header-top h2 {
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-family: Tahoma, sans-serif;
+    font-size: 20;
+    font-weight: bold;
+}
+
+.login-header {
+    margin-top: 20px;
+    /*seperate each headers*/
+    margin-bottom: 12px;
+    height: 45px;
+    background-color: #474747;
+}
+
+.login-header h1 {
+    margin-left: 20px;
+    padding-top: 5px;
+    font-family: Tahoma, sans-serif;
+    font-size: 27;
+    font-weight: bold;
+}
+
+.super-user{
+    font-weight: 700;
+    color: #eec73f;
+}
+
+body {
+    background-color: #242424;
+}
+
+h1,a,
+p,h2,h3{
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+.non_deployed{
+    background-color: #18171B;
+    margin-right: 1400px;
+    color: #FF8400;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 15px;
 }
