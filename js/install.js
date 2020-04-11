@@ -23,7 +23,7 @@ loading.addEventListener('click', function(){
 
 
     function update() {
-        var element = document.getElementById("installer_bar");
+        var element = document.getElementById("bar");
         element.style.height = "15px";
         var width = 1;
         var identity = setInterval(scene, 200);
