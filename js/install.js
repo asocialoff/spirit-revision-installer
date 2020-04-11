@@ -23,10 +23,14 @@ loading.addEventListener('click', function(){
 
 
     function update() {
+        // target element
         var element = document.getElementById("bar");
+        // reset on startup
         element.style.height = "15px";
+        element.style.border = "0";
+
         var width = 1;
-        var identity = setInterval(scene, 200);
+        var identity = setInterval(scene, 200); // 20 secs delay
         function scene() {
             if (width >= 100) {
                 clearInterval(identity);

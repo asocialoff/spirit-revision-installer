@@ -304,8 +304,9 @@ legend {
 }
 
 #installer_bar {
+    border: 1px solid #333333;
     width: 50%;
-    background-color: #ddd;
+    background-color: #373737;
     margin-left: auto;
     margin-right: auto;
 }
@@ -313,7 +314,7 @@ legend {
 #bar {
     width: 1%;
     height: 0;
-    background-color: #7f39a5;
+    background-image: linear-gradient(to top, black,#7813ac );
     text-align: center;
     line-height: 32px;
     color: black;
