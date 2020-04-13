@@ -35,6 +35,7 @@ if(isset($_GET['db_host'])&&isset($_GET['db_name'])&&isset($_GET['db_username'])
             $parse = "<?php \n/*\n* Auto-generated configuration file \n*/\n\n" . '$cfg_host="' . $_GET["db_host"] . '";' . "\n" . '$cfg_name="'  .  $_GET["db_name"] . '";'
                 . "\n" . '$cfg_username="' . $_GET["db_username"] . '";' . "\n" . '$cfg_password="' . $_GET["db_password"] . '";'
                 . "\n\n" . '$smtp_login="' . $_GET["smtp_login"] . '";' . "\n" . '$smtp_password="' . $_GET["smtp_password"] . '";'
+                . "\n" . '$sms_api_token"' . $_GET["sms_token"] . '";'
                 . "\n" . "\n //DO NOT MODIFY" . "\n" . '$public_source_code_url="' . $output . '";'
                 . "\n" . '$spirit_installer_rev_build="' . $spirit_installer_build . '";' . "\n" . '$web_revision_build="' . $web_rev_build . '";' . "\n?>";
 
@@ -93,6 +94,12 @@ if(!is_deployed())
                 <legend>SMTP configuration</legend>
                 <center><input required="" class="label_info" type="email" name="smtp_login" placeholder="Email address"/></center>
                 <center><input required="" class="label_info" type="password"  name="smtp_password" placeholder="Email password"/></center>
+            </fieldset>
+        </div>
+        <div class="action-box">
+            <fieldset>
+                <legend>SMS Mode configuration (Alpha feature)</legend>
+                <center><input class="label_info" type="email" name="sms_token" placeholder="SMS Mode Token"/></center>
             </fieldset>
         </div>
         <center><input class="label_info" type="submit" value="Build database configuration file"></input></center>

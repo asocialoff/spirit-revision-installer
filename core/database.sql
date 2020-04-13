@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 10 avr. 2020 à 23:38
+-- Généré le : lun. 13 avr. 2020 à 23:04
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.2.28
 
@@ -29,14 +29,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `computer` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `os_id` int(11) NOT NULL
+                            `id` int(11) NOT NULL,
+                            `name` varchar(50) NOT NULL,
+                            `os_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `computer`
 --
+
+
 
 -- --------------------------------------------------------
 
@@ -45,13 +47,15 @@ CREATE TABLE `computer` (
 --
 
 CREATE TABLE `computer_software` (
-  `software_id` int(11) NOT NULL,
-  `computer_id` int(11) NOT NULL
+                                     `software_id` int(11) NOT NULL,
+                                     `computer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `computer_software`
 --
+
+
 
 -- --------------------------------------------------------
 
@@ -60,8 +64,8 @@ CREATE TABLE `computer_software` (
 --
 
 CREATE TABLE `installer_version` (
-  `rev` varchar(50) NOT NULL,
-  `id` int(11) NOT NULL
+                                     `rev` varchar(50) NOT NULL,
+                                     `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -71,17 +75,18 @@ CREATE TABLE `installer_version` (
 --
 
 CREATE TABLE `login` (
-  `username` varchar(30) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `email` varchar(35) NOT NULL,
-  `token` text NOT NULL,
-  `id` int(5) NOT NULL,
-  `is_admin` tinyint(1) NOT NULL DEFAULT 0,
-  `phone_number` varchar(10) NOT NULL,
-  `secure_code` varchar(50) NOT NULL,
-  `in_verification` tinyint(1) NOT NULL DEFAULT 0,
-  `confirmed_account` tinyint(1) DEFAULT 0,
-  `recovery_code` varchar(50) NOT NULL
+                         `username` varchar(30) NOT NULL,
+                         `password` varchar(100) NOT NULL,
+                         `email` varchar(35) NOT NULL,
+                         `token` text NOT NULL,
+                         `id` int(5) NOT NULL,
+                         `is_admin` tinyint(1) NOT NULL DEFAULT 0,
+                         `phone_number` varchar(10) NOT NULL,
+                         `secure_code` varchar(50) NOT NULL,
+                         `active_2FA` tinyint(1) NOT NULL DEFAULT 0,
+                         `confirmed_account` tinyint(1) DEFAULT 0,
+                         `recovery_code` varchar(50) NOT NULL,
+                         `code_2FA` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -95,13 +100,14 @@ CREATE TABLE `login` (
 --
 
 CREATE TABLE `os` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+                      `id` int(11) NOT NULL,
+                      `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `os`
 --
+
 
 -- --------------------------------------------------------
 
@@ -110,8 +116,8 @@ CREATE TABLE `os` (
 --
 
 CREATE TABLE `revisions` (
-  `revision_id` int(11) NOT NULL,
-  `computer_os` varchar(50) NOT NULL
+                             `revision_id` int(11) NOT NULL,
+                             `computer_os` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -121,13 +127,14 @@ CREATE TABLE `revisions` (
 --
 
 CREATE TABLE `software` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) NOT NULL
+                            `id` int(11) NOT NULL,
+                            `name` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `software`
 --
+
 
 -- --------------------------------------------------------
 
@@ -136,17 +143,18 @@ CREATE TABLE `software` (
 --
 
 CREATE TABLE `ticket` (
-  `ticket_object` text NOT NULL,
-  `ticket_body` text NOT NULL,
-  `creation_date` text NOT NULL,
-  `ticket_submitter` varchar(30) NOT NULL,
-  `seen` tinyint(1) NOT NULL DEFAULT 0,
-  `id` int(11) NOT NULL
+                          `ticket_object` text NOT NULL,
+                          `ticket_body` text NOT NULL,
+                          `creation_date` text NOT NULL,
+                          `ticket_submitter` varchar(30) NOT NULL,
+                          `seen` tinyint(1) NOT NULL DEFAULT 0,
+                          `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `ticket`
 --
+
 
 -- --------------------------------------------------------
 
@@ -155,8 +163,8 @@ CREATE TABLE `ticket` (
 --
 
 CREATE TABLE `tos` (
-  `policy` text NOT NULL,
-  `id` int(11) NOT NULL
+                       `policy` text NOT NULL,
+                       `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -173,8 +181,8 @@ INSERT INTO `tos` (`policy`, `id`) VALUES
 --
 
 CREATE TABLE `webclient_version` (
-  `rev` varchar(50) NOT NULL,
-  `id` int(11) NOT NULL
+                                     `rev` varchar(50) NOT NULL,
+                                     `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -185,63 +193,63 @@ CREATE TABLE `webclient_version` (
 -- Index pour la table `computer`
 --
 ALTER TABLE `computer`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `os_id` (`os_id`);
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `os_id` (`os_id`);
 
 --
 -- Index pour la table `computer_software`
 --
 ALTER TABLE `computer_software`
-  ADD KEY `software_id` (`software_id`),
-  ADD KEY `computer_id` (`computer_id`);
+    ADD KEY `software_id` (`software_id`),
+    ADD KEY `computer_id` (`computer_id`);
 
 --
 -- Index pour la table `installer_version`
 --
 ALTER TABLE `installer_version`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `os`
 --
 ALTER TABLE `os`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `revisions`
 --
 ALTER TABLE `revisions`
-  ADD PRIMARY KEY (`revision_id`);
+    ADD PRIMARY KEY (`revision_id`);
 
 --
 -- Index pour la table `software`
 --
 ALTER TABLE `software`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `ticket`
 --
 ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `tos`
 --
 ALTER TABLE `tos`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `webclient_version`
 --
 ALTER TABLE `webclient_version`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -251,55 +259,55 @@ ALTER TABLE `webclient_version`
 -- AUTO_INCREMENT pour la table `computer`
 --
 ALTER TABLE `computer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `installer_version`
 --
 ALTER TABLE `installer_version`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT pour la table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+    MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT pour la table `os`
 --
 ALTER TABLE `os`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `revision_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `revision_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `software`
 --
 ALTER TABLE `software`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT pour la table `tos`
 --
 ALTER TABLE `tos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `webclient_version`
 --
 ALTER TABLE `webclient_version`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Contraintes pour les tables déchargées
@@ -309,14 +317,14 @@ ALTER TABLE `webclient_version`
 -- Contraintes pour la table `computer`
 --
 ALTER TABLE `computer`
-  ADD CONSTRAINT `computer_ibfk_1` FOREIGN KEY (`os_id`) REFERENCES `os` (`id`);
+    ADD CONSTRAINT `computer_ibfk_1` FOREIGN KEY (`os_id`) REFERENCES `os` (`id`);
 
 --
 -- Contraintes pour la table `computer_software`
 --
 ALTER TABLE `computer_software`
-  ADD CONSTRAINT `computer_software_ibfk_1` FOREIGN KEY (`software_id`) REFERENCES `software` (`id`),
-  ADD CONSTRAINT `computer_software_ibfk_2` FOREIGN KEY (`computer_id`) REFERENCES `computer` (`id`);
+    ADD CONSTRAINT `computer_software_ibfk_1` FOREIGN KEY (`software_id`) REFERENCES `software` (`id`),
+    ADD CONSTRAINT `computer_software_ibfk_2` FOREIGN KEY (`computer_id`) REFERENCES `computer` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
