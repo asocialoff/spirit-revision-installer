@@ -249,8 +249,10 @@ button {
     text-align: center;
 }
 
-.body-scene{
-    margin-left: 500px;
+.body-scene {
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 50px;
     height: auto;
     width: 500px;
     background-color: #474747;
